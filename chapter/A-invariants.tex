@@ -1,0 +1,142 @@
+\chapter{Kinematic Invariants}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+...
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conventions}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+I will work with vectors in $D$-dimensional Minkowski spacetime with metric tensor with mostly plus signature. Thus, given a vector $v$ with temporal component $v_{0}$ and spatial component $\mathbf{v}$, the Minkowski norm of $v$ is
+\begin{equation}
+	\norm{v}^{2} = -v_{0}^{2} + \abs{\mathbf{v}}^{2}.
+\end{equation}
+The Minkowski norm of a vector can be positive, zero, or negative. A vector with positive norm is \textbf{slow} (or massive). A vector with zero norm is \textbf{null}. A vector with negative norm is \textbf{fast} (or tachyonic).
+
+Each slow quantum has a massive momentum vector $p$ associated to it. The \textbf{mass} $m$, \textbf{energy} $E$, and \textbf{spatial momentum} $\mathbf{p}$ of a slow quantum satisfy the on-shell constraint:
+\begin{equation}
+	\norm{p}^{2} = - m^{2} \quad \Longrightarrow \quad m^{2} = E^{2} - \abs{\mathbf{p}}^{2}.
+\end{equation}
+In a scattering process with $N$ external quanta you typically have some quanta be \textbf{incoming} and some quanta be \textbf{outgoing}. Given a pair of momenta, this pair is \textbf{adjacent} if either both quanta are incoming, or both quanta are outgoing. Alternatively, a pair of momenta is \textbf{nonadjacent} if one momenta is incoming and the other is outgoing. You can encode adjacency values in the \textit{symmetric} matrix $A$ with $A_{ij} = +1$ if $p_{i}$ and $p_{j}$ are adjacent, and $A_{ij} = -1$ otherwise.
+
+\textbf{Contiguity} is a related property having to do with how the external quanta are ordered. You can encode contiguity in the \textit{antisymmetric} matrix $C$. For example, consider a sequence of four momenta:
+\begin{equation}
+	p_{1} \rightarrow p_{2} \rightarrow p_{4} \rightarrow p_{3}.
+\end{equation}
+The contiguity matrix associated to this sequence is
+\begin{equation}
+	C = \begin{pmatrix} 0 & 1 & -1 & 0 \\ -1 & 0 & 0 & 1 \\ 1 & 0 & 0 & -1 \\ 0 & -1 & 1 & 0 \end{pmatrix}.
+\end{equation}
+That is, $p_{1}$ is before $p_{2}$ and after $p_{3}$, $p_{2}$ is before $p_{4}$ and after $p_{1}$, and so on.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Mandelstam Invariants}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Given a collection of momenta, the Mandelstam invariants are the Minkowski norms of certain linear combinations of these momenta.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{2-Mandelstam Invariants}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Given two momenta $p_{i}$ and $p_{j}$, and an adjacency $A_{ij}$ for this pair, the \textbf{2-Mandelstam} invariant is
+\begin{equation}
+	s_{ij} \equiv -\norm{p_{i} + A_{ij} p_{j}}^{2}.
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{3-Mandelstam Invariants}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Given three momenta $p_{i}$, $p_{j}$, and $p_{k}$, and two adjacency values $A_{ij}$ and $A_{ik}$, the \textbf{3-Mandelstam} invariant is
+\begin{equation}
+	s_{ijk} \equiv -\norm{p_{i} + A_{ij} p_{j} + A_{ik} p_{k}}^{2}.
+\end{equation}
+The adjacency of $p_{j}$ and $p_{k}$ is the product
+\begin{equation}
+	A_{jk} = A_{ij} A_{ik}.
+\end{equation}
+The 3-Mandelstam invariant can be written in terms of 2-Mandelstam invariants and Minkowski norms:
+\begin{equation}
+	s_{ijk} = s_{ij} + s_{jk} + s_{ki} + \norm{p_{i}}^{2} + \norm{p_{j}}^{2} + \norm{p_{k}}^{2}.
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{4-Mandelstam Invariants}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Given four momenta $p_{i}$, $p_{j}$, $p_{k}$, and $p_{l}$, and three adjacency values $A_{ij}$, $A_{ik}$, and $A_{il}$, the \textbf{4-Mandelstam} invariant is
+\begin{equation}
+	s_{ijkl} \equiv -\norm{p_{i} + A_{ij} p_{j} + A_{ik} p_{k} + A_{il} p_{l}}^{2}.
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Regge-Mandelstam Invariants}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Given two massive momenta with on-shell constraints
+\begin{equation}
+	m_{i}^{2} = -\norm{p_{i}}^{2}, \qquad m_{j}^{2} = -\norm{p_{j}}^{2};
+\end{equation}
+and adjacency value $A_{ij}$, the \textbf{Regge-Mandelstam} invariant is
+\begin{equation}
+	r_{ij} \equiv -\frac{p_{i} \cdot p_{j}}{m_{i} m_{j}} = A_{ij} \left( \frac{s_{ij} - m_{i}^{2} - m_{j}^{2}}{2 m_{i} m_{j}} \right).
+\end{equation}
+When $s_{ij}$ is the threshold value $\left( m_{i} + A_{ij} m_{j} \right)^{2}$, you have $r_{ij} = 1$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Gram Invariants}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Gram invariants correspond to determinants of Gram matrices associated to a collection of momenta.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{2-Gram Invariants}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The 2-Gram invariant is
+\begin{equation}
+	G_{ij} \equiv - \det{\begin{pmatrix} \norm{p_{i}}^{2} & p_{i}\cdot p_{j} \\ p_{j} \cdot p_{i} & \norm{p_{j}}^{2} \end{pmatrix}}.
+\end{equation}
+In terms of Mandelstam invariants, this is
+\begin{equation}
+	G_{ij} = \frac{1}{4} \left[ \left( s_{ij} + \norm{p_{i}}^{2} + \norm{p_{j}}^{2} \right)^{2} - 4 \norm{p_{i}}^{2} \norm{p_{j}}^{2} \right].
+\end{equation}
+Note that the adjacency does not appear in this expression. It is convenient to introduce the \textbf{K\"{a}ll\'{e}n function}:
+\begin{equation}
+	\Lambda_{ij}(s_{ij}) \equiv \left( s_{ij} + \norm{p_{i}}^{2} + \norm{p_{j}}^{2} \right)^{2} - 4 \norm{p_{i}}^{2} \norm{p_{j}}^{2}.
+\end{equation}
+You can also write the 2-Gram invariant in terms of the Regge-Mandelstam invariant:
+\begin{equation}
+	G_{ij} = \norm{p_{i}}^{2} \norm{p_{j}}^{2} \left( r_{ij}^{2} - 1 \right).
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{3-Gram Invariants}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+...
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{4-Gram Invariants}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+...
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Regge-Gram Invariants}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+When all the momenta are massive, you can factorize the norms out of the Gram invariants. The polynomial that multiplies the norms is a Regge-Gram invariant. The \textbf{2-Regge-Gram} invariant is
+\begin{equation}
+	g_{ij} \equiv \frac{G_{ij}}{m_{i}^{2} m_{j}^{2}}.
+\end{equation}
+Note that
+\begin{equation}
+	r_{ij}^{2} - g_{ij} = 1.
+\end{equation}
+When $g_{ij} > 0$, this suggests a hyperbolic parameterization:
+\begin{equation}
+	r_{ij} = \operatorname{cosh}{\left( \rho_{ij} \right)}, \qquad \sqrt{g_{ij}} = \operatorname{sinh}{\left( \rho_{ij} \right)}.
+\end{equation}
+You can also introduce \textbf{3-Regge-Gram} invariants,
+\begin{equation}
+	g_{ijk} \equiv \frac{G_{ijk}}{m_{i}^{2} m_{j}^{2} m_{k}^{2}},
+\end{equation}
+and \textbf{4-Regge-Gram} invariants,
+\begin{equation}
+	g_{ijkl} \equiv \frac{G_{ijkl}}{m_{i}^{2} m_{j}^{2} m_{k}^{2} m_{l}^{2}}.
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Sudakov Invariants}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Every massive momentum $p_{i}$ has a null vector $n_{i}$ associated to it. This is called a \textbf{Sudakov vector}. With Sudakov vectors you can construct Mandelstam-like invariants. For example, given two Sudakov vectors $n_{i}$ and $n_{j}$, and the adjacency value $A_{ij}$, the \textbf{2-Sudakov} invariant is
+\begin{equation}
+	S_{ij} \equiv - \norm{n_{i} + A_{ij} n_{j}}^{2} = - 2 A_{ij} \left( n_{i} \cdot n_{j} \right).
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Regge-Sudakov Invariants}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In complete analogy with Regge-Mandelstam invariants, a Regge-Sudakov invariant has the form
+\begin{equation}
+	R_{ij} \equiv -2 \frac{n_{i} \cdot n_{j}}{m_{i} m_{j}} = A_{ij} \frac{S_{ij}}{m_{i} m_{j}}.
+\end{equation}
+Indeed, the Regge-Mandelstam invariants can be written as Laurent polynomials of the Regge-Sudakov invariants.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
