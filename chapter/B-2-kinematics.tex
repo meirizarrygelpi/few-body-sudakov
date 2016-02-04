@@ -1,0 +1,58 @@
+\chapter{Two-Body Kinematics}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The kinematics of two independent massive bodies $\Phi_{1}(p_{1})$ and $\Phi_{2}(p_{2})$ is pretty simple. You have two on-shell constraints:
+\begin{equation}
+	m_{1}^{2} = - \norm{p_{1}}^{2}, \qquad m_{2}^{2} = - \norm{p_{2}}^{2}.
+\end{equation}
+You can construct one 2-Mandelstam invariant,
+\begin{equation}
+	s_{12} \equiv - \norm{p_{1} + A_{12} p_{2}}^{2};
+\end{equation}
+one Regge-Mandelstam invariant,
+\begin{equation}
+	r_{12} \equiv - \frac{p_{1} \cdot p_{2}}{m_{1} m_{2}} = A_{12} \left( \frac{s_{12} - m_{1}^{2} - m_{2}^{2}}{2 m_{1} m_{2}} \right);
+\end{equation}
+one 2-Gram invariant,
+\begin{equation}
+	G_{12} \equiv - \det{ \begin{pmatrix} \norm{p_{1}}^{2} & p_{1} \cdot p_{2} \\ p_{2} \cdot p_{1} & \norm{p_{2}}^{2} \end{pmatrix} } = \frac{1}{4} \left[ \left( s_{12} - m_{1}^{2} - m_{2}^{2} \right)^{2} - 4 m_{1}^{2} m_{2}^{2} \right];
+\end{equation}
+and thus, one Regge-Gram invariant,
+\begin{equation}
+	g_{12} \equiv \frac{G_{12}}{m_{1}^{2} m_{2}^{2}} = r_{12}^{2} - 1.
+\end{equation}
+Since
+\begin{equation}
+	r_{12}^{2} - g_{12} = 1,
+\end{equation}
+you can introduce a hyperbolic parameterization of the form:
+\begin{equation}
+	r_{12} = \operatorname{cosh}{\left( \xi_{12} \right)}, \qquad \sqrt{g_{12}} = \operatorname{sinh}{\left( \xi_{12} \right)}.
+\end{equation}
+Thus,
+\begin{equation}
+	\xi_{12} = \operatorname{acosh}{\left( r_{12} \right)}.
+\end{equation}
+Note that
+\begin{equation}
+	\operatorname{tanh}{\left( \xi_{12} \right)} = \frac{\sqrt{r_{12}^{2} - 1}}{r_{12}}.
+\end{equation}
+The double-argument functions are useful:
+\begin{equation}
+	\operatorname{cosh}{\left( 2\xi_{12} \right)} = 
+\end{equation}
+\begin{equation}
+	\operatorname{sinh}{\left( 2\xi_{12} \right)} = 
+\end{equation}
+\begin{equation}
+	\operatorname{tanh}{\left( 2\xi_{12} \right)} = 
+\end{equation}
+The half-argument functions are also useful:
+\begin{equation}
+	\operatorname{cosh}^{2}{\left( \frac{\xi_{12}}{2} \right)} = \frac{r_{12} + 1}{2} = \frac{s_{12} - \left( m_{1} - A_{12} m_{2} \right)^{2}}{4 m_{1} m_{2}},
+\end{equation}
+\begin{equation}
+	\operatorname{sinh}^{2}{\left( \frac{\xi_{12}}{2} \right)} = \frac{r_{12} - 1}{2} = \frac{s_{12} - \left( m_{1} + A_{12} m_{2} \right)^{2}}{4 m_{1} m_{2}},
+\end{equation}
+\begin{equation}
+	\operatorname{tanh}^{2}{\left( \frac{\xi_{12}}{2} \right)} = \frac{r_{12} - 1}{r_{12} + 1} = \frac{s_{12} - \left( m_{1} + A_{12} m_{2} \right)^{2}}{s_{12} - \left( m_{1} - A_{12} m_{2} \right)^{2}}.
+\end{equation}
